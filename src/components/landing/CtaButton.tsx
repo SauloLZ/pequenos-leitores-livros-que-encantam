@@ -26,7 +26,7 @@ export function CtaButton({
 }: CtaButtonProps) {
   const href = getCheckoutHref();
   // Long labels may wrap on small phones: let tall buttons grow instead of overflowing.
-  const classes = cn("whitespace-normal text-center", size === "xl" && "h-auto min-h-14 py-3", className);
+  const classes = cn("whitespace-normal text-center sm:whitespace-nowrap", size === "xl" && "h-auto min-h-14 py-3", className);
   const eventParams = {
     location,
     content_name: PRODUCT.fullName,

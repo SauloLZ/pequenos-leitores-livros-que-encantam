@@ -23,7 +23,7 @@ export function Hero() {
             <StarShape className="size-4 text-sun" />
             {PRODUCT.fullName}
           </span>
-          <h1 className="mt-5 text-[2.1rem] font-bold leading-[1.1] text-foreground sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="mt-5 text-[2.1rem] font-bold leading-[1.1] text-foreground sm:text-5xl lg:text-[3.1rem]">
             <span className="text-sky-ink">200 atividades</span> para apoiar a alfabetização de forma{" "}
             <span className="relative inline-block text-berry-ink">
               divertida!
@@ -50,7 +50,7 @@ export function Hero() {
 
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
             <CtaButton location="hero" className="w-full sm:w-auto" />
-            <div className="text-center sm:text-left">
+            <div className="shrink-0 whitespace-nowrap text-center sm:text-left">
               <p className="font-display text-3xl font-bold leading-none text-foreground">{formatBRL(PRODUCT.price)}</p>
               <p className="mt-1 text-xs font-semibold text-muted-foreground">pagamento único · produto digital</p>
             </div>
