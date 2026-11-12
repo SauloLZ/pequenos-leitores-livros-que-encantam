@@ -9,8 +9,9 @@ import { ProductVisual } from "./ProductVisual";
 
 const POINTS = ["200 atividades", "12 módulos organizados", "PDFs para imprimir", "Acesso digital após a compra"];
 
-const LEFT = modulePage(KIT_MODULES[0]);
-const RIGHT = modulePage(KIT_MODULES[3]);
+const [first, , , fourth] = KIT_MODULES;
+const LEFT = first ? modulePage(first) : COVER_IMAGE;
+const RIGHT = fourth ? modulePage(fourth) : COVER_IMAGE;
 
 export function Hero() {
   const hasRealImages = Boolean(COVER_IMAGE.src);

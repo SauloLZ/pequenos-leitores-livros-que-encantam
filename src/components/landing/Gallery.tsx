@@ -7,7 +7,8 @@ import { Lightbox } from "./Lightbox";
 import { ProductVisual } from "./ProductVisual";
 import { SectionHeading } from "./SectionHeading";
 
-const PAGES = KIT_MODULES.map(modulePage);
+const ITEMS = KIT_MODULES.map((m) => ({ module: m, image: modulePage(m) }));
+const PAGES = ITEMS.map((i) => i.image);
 
 export function Gallery() {
   const [page, setPage] = useState<number | null>(null);
@@ -21,7 +22,7 @@ export function Gallery() {
         </SectionHeading>
 
         <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
-          {PAGES.map((img, i) => (
+          {ITEMS.map(({ module: m, image: img }, i) => (
             <li key={img.label}>
               <button
                 type="button"
@@ -33,10 +34,10 @@ export function Gallery() {
                 <span className="mt-2.5 flex items-start justify-between gap-2">
                   <span>
                     <span className="block font-display text-xs font-semibold uppercase tracking-wide text-berry-ink">
-                      Módulo {KIT_MODULES[i].number}
+                      Módulo {m.number}
                     </span>
                     <span className="block font-display text-sm font-semibold leading-snug text-foreground sm:text-base">
-                      {KIT_MODULES[i].sample}
+                      {m.sample}
                     </span>
                   </span>
                   <ZoomIn className="mt-0.5 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground" />

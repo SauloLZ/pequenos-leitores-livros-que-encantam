@@ -27,6 +27,8 @@ const TONES = [
   { card: "bg-leaf-soft", badge: "bg-leaf text-foreground", ink: "text-leaf-ink" },
 ];
 
+const DEFAULT_TONE = { card: "bg-sky-soft", badge: "bg-sky text-primary-foreground", ink: "text-sky-ink" };
+
 export function Modules() {
   return (
     <section id="modulos" className="bg-paper py-16 md:py-24">
@@ -36,8 +38,8 @@ export function Modules() {
         </SectionHeading>
         <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {KIT_MODULES.map((m, i) => {
-            const Icon = ICONS[i];
-            const tone = TONES[i % TONES.length];
+            const Icon = ICONS[i] ?? BookOpen;
+            const tone = TONES[i % TONES.length] ?? DEFAULT_TONE;
             return (
               <li key={m.number} className={cn("flex flex-col rounded-3xl p-5", tone.card)}>
                 <div className="flex items-center gap-3">
