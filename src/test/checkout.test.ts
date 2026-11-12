@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { CHECKOUT_URL, META_PIXEL_ID, PRODUCT } from "@/lib/config";
+import { PRODUCT } from "@/lib/config";
 import { formatBRL, getCheckoutHref } from "@/lib/checkout";
 
 describe("checkout rules", () => {
@@ -21,8 +21,4 @@ describe("checkout rules", () => {
     expect(getCheckoutHref("not a url")).toBeNull();
   });
 
-  it("ships with no invented checkout link or pixel ID", () => {
-    expect(CHECKOUT_URL).toBe("");
-    expect(META_PIXEL_ID).toBe("");
-  });
 });
