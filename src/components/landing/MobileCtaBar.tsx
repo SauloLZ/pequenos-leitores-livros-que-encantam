@@ -10,7 +10,7 @@ export function MobileCtaBar() {
           <p className="text-[0.7rem] font-semibold leading-none text-muted-foreground">Kit completo</p>
           <p className="font-display text-xl font-bold leading-tight text-foreground">{formatBRL(PRODUCT.price)}</p>
         </div>
-        <CtaButton location="mobile_bar" label="Quero meu kit" size="pill" className="flex-1" showIcon={false} />
+        <CtaButton location="mobile_bar" label="QUERO MEU KIT" size="pill" className="flex-1" showIcon={false} />
       </div>
     </div>
   );

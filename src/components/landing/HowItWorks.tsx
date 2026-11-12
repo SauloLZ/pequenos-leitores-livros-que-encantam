@@ -10,7 +10,7 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="bg-sky-soft py-20 md:py-28">
+    <section id="como-funciona" className="bg-sky-soft py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading eyebrow="Como funciona" title="Simples em 3 passos" tone="berry" />
         <ol className="relative mt-12 grid gap-6 md:grid-cols-3">

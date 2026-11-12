@@ -31,7 +31,7 @@ export function Benefits() {
           <article className="flex flex-col justify-center rounded-3xl border-2 border-dashed border-berry bg-berry-soft p-6 text-center">
             <h3 className="text-xl font-semibold text-foreground">Tudo em um só kit</h3>
             <p className="mt-2 leading-relaxed text-muted-foreground">200 atividades, pagamento único.</p>
-            <CtaButton location="benefits" size="lg" className="mt-5 w-full" />
+            <CtaButton location="benefits" className="mt-5 w-full text-base" />
           </article>
         </div>
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
