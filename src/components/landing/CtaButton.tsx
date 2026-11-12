@@ -15,7 +15,7 @@ interface CtaButtonProps {
   showIcon?: boolean;
 }
 
-export const DEFAULT_CTA_LABEL = `Quero meu kit por ${formatBRL(PRODUCT.price)}`;
+export const DEFAULT_CTA_LABEL = `QUERO MEU KIT POR ${formatBRL(PRODUCT.price)}`;
 
 export function CtaButton({
   location,
@@ -25,6 +25,8 @@ export function CtaButton({
   showIcon = true,
 }: CtaButtonProps) {
   const href = getCheckoutHref();
+  // Long labels may wrap on small phones: let tall buttons grow instead of overflowing.
+  const classes = cn("whitespace-normal text-center sm:whitespace-nowrap", size === "xl" && "h-auto min-h-14 py-3", className);
   const eventParams = {
     location,
     content_name: PRODUCT.fullName,
@@ -34,7 +36,7 @@ export function CtaButton({
 
   if (href) {
     return (
-      <Button asChild variant="cta" size={size} className={cn("whitespace-normal text-center", className)}>
+      <Button asChild variant="cta" size={size} className={classes}>
         <a
           href={href}
           rel="noopener"
@@ -56,7 +58,7 @@ export function CtaButton({
       type="button"
       variant="cta"
       size={size}
-      className={cn("whitespace-normal text-center", className)}
+      className={classes}
       onClick={() => {
         trackEvent("CtaClick", { ...eventParams, checkout_ready: false });
         toast("Link de compra em breve", {
