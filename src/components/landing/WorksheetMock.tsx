@@ -43,7 +43,7 @@ function Page({ kind }: { kind: Exclude<MockKind, "cover"> }) {
           </div>
           <div className="mt-[10%] space-y-3">
             {[0, 1, 2].map((r) => (
-              <div key={r} className="flex justify-between border-b-2 border-dashed border-sky/50 pb-1">
+              <div key={r} className={cn("flex justify-between border-b-2 border-dashed border-sky/50 pb-1", r === 2 && "hidden sm:flex")}>
                 {Array.from({ length: 5 }).map((_, i) => (
                   <span key={i} className="font-display text-xl font-bold text-outline-dashed">A</span>
                 ))}
@@ -79,10 +79,10 @@ function Page({ kind }: { kind: Exclude<MockKind, "cover"> }) {
       return (
         <>
           <Header title="Ligue os sons" tone="bg-berry-soft text-berry-ink" />
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {(["bg-berry", "bg-leaf", "bg-sky", "bg-sun"] as const).map((c, i) => (
               <div key={c} className="flex items-center justify-between">
-                <span className={cn("size-8 rounded-full", c)} />
+                <span className={cn("size-6 rounded-full sm:size-8", c)} />
                 <span className="mx-2 h-0 flex-1 border-t-2 border-dotted border-muted-foreground/30" />
                 <span className="rounded-md bg-muted px-2 py-0.5 font-display text-xs font-bold text-muted-foreground">
                   {["BO", "PA", "GA", "FO"][i]}
@@ -164,7 +164,7 @@ function Cover() {
       <div className="rounded-full bg-paper px-3 py-1 font-display text-xs font-bold text-foreground">
         200 atividades · 12 módulos
       </div>
-      <StarShape className="absolute right-[8%] top-[22%] size-5 text-sun" />
+      <StarShape className="absolute bottom-[16%] right-[8%] size-5 text-sun" />
       <StarShape className="absolute left-[8%] top-[45%] size-4 text-berry" />
     </div>
   );
