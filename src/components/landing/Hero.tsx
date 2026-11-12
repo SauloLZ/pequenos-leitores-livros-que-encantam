@@ -10,6 +10,7 @@ const POINTS = ["200 atividades originais", "12 módulos em sequência", "PDF A4
 
 export function Hero() {
   const hasRealImages = Boolean(COVER_IMAGE.src);
+  const [left = COVER_IMAGE, right = COVER_IMAGE] = SAMPLE_PAGES;
   return (
     <section className="relative overflow-hidden bg-dots">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-10 sm:px-6 md:pb-24 md:pt-16 lg:grid-cols-[1.05fr_1fr]">
@@ -56,9 +57,9 @@ export function Hero() {
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="absolute inset-6 -z-0 rounded-[3rem] bg-sky-soft" aria-hidden="true" />
           <div className="relative grid grid-cols-[1fr_1.3fr_1fr] items-end gap-3 px-2 pt-8 sm:gap-4">
-            <ProductVisual image={SAMPLE_PAGES[0]} className="-rotate-6 translate-y-6" />
+            <ProductVisual image={left} className="-rotate-6 translate-y-6" />
             <ProductVisual image={COVER_IMAGE} eager className="z-10" />
-            <ProductVisual image={SAMPLE_PAGES[1]} className="rotate-6 translate-y-6" />
+            <ProductVisual image={right} className="rotate-6 translate-y-6" />
           </div>
           <LetterBlock letter="A" tone="berry" className="absolute -left-2 top-4 animate-float [--r:-10deg]" />
           <LetterBlock letter="b" tone="leaf" className="absolute -right-1 top-16 animate-float [--r:8deg] [animation-delay:1.2s]" />
