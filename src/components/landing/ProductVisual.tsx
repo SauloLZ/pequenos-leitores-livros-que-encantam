@@ -7,17 +7,23 @@ export function ProductVisual({
   image,
   className,
   eager = false,
+  sizes,
 }: {
   image: ProductImage;
   className?: string;
   eager?: boolean;
+  sizes?: string;
 }) {
   if (image.src) {
     return (
       <img
         src={image.src}
         alt={image.alt}
+        width={image.width}
+        height={image.height}
+        sizes={sizes}
         loading={eager ? "eager" : "lazy"}
+        fetchPriority={eager ? "high" : "auto"}
         decoding="async"
         className={cn("aspect-[1/1.414] w-full rounded-xl border border-border bg-paper object-cover shadow-paper", className)}
       />
