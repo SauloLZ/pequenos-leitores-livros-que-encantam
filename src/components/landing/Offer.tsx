@@ -20,7 +20,7 @@ export function Offer() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-sun bg-sun-soft p-6 sm:p-10 md:p-14">
           <StarShape className="absolute right-8 top-8 size-10 animate-twinkle text-sun" />
-          <StarShape className="absolute bottom-10 left-6 size-6 animate-twinkle text-berry [animation-delay:1s]" />
+          <StarShape className="absolute bottom-10 left-6 hidden size-6 animate-twinkle text-berry [animation-delay:1s] md:block" />
           <div className="grid items-center gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-10">
             <ProductVisual image={COVER_IMAGE} className="mx-auto w-1/2 -rotate-3 sm:w-2/5 md:w-full" sizes="(min-width: 768px) 320px, 50vw" />
             <div className="text-center md:text-left">

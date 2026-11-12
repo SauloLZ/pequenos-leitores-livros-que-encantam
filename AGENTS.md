@@ -32,4 +32,5 @@ use the editor.
 ## Project rules
 - Checkout link, product facts and contact info live in `src/lib/config.ts`; every CTA goes through `CtaButton` so the empty-checkout behavior stays in one place.
 - Analytics go through `src/lib/tracking.ts` (`trackEvent`); the Meta Pixel loads only when its ID is set, so no component calls `fbq` directly.
-- Real product images are wired via `src/lib/product-images.ts`; a `null` src renders an illustrated mock so the page works before assets exist.
+- Real product images are wired via `src/lib/product-images.ts` (CDN asset pointers in `src/assets/kit/`); a `null` src renders an illustrated mock so the page works before assets exist.
+- The 12 modules (titles, activity ranges, sample page) live in `src/lib/modules.ts`; gallery, module cards and tests all read from it so counts stay consistent.
